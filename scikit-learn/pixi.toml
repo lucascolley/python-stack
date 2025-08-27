@@ -4,21 +4,26 @@ channels = ["https://prefix.dev/conda-forge"]
 platforms = ["osx-arm64"]
 preview = ["pixi-build"]
 
+
 [package]
 name = { workspace = true }
 authors = ["scikit-learn developers <scikit-learn@python.org>"]
 description = "A set of python modules for machine learning and data mining"
 version = "1.8.0.dev0"
 
+[package.build]
+source.path = "scikit-learn"
+config.compilers = ["c"]
+
 [package.build.backend]
 name = "pixi-build-python"
 version = "*"
-
-[package.build.source]
-path = "scikit-learn"
+channels = [
+  "https://prefix.dev/pixi-build-backends",
+  "https://prefix.dev/conda-forge",
+]
 
 [package.build-dependencies]
-compilers = "*"
 llvm-openmp = "*"
 python = "*"
 ninja = "*"
@@ -28,7 +33,6 @@ numpy = "*"
 scipy = "*"
 
 [package.host-dependencies]
-compilers = "*"
 llvm-openmp = "*"
 uv = "*"
 python = "*"
@@ -45,6 +49,7 @@ numpy = ">=1.19.5,<3"
 scipy = ">=1.6.0,<2"
 joblib = ">=1.2.0,<2"
 threadpoolctl = ">=3.1.0,<4"
+
 
 [feature.source.dependencies]
 python = "*"
@@ -106,6 +111,7 @@ pooch = ">=1.6.0"
 
 [feature.tests.tasks]
 tests = { cmd = "spin test", cwd = "scikit-learn" }
+
 
 [environments]
 dev = { features = ["source", "dev", "lint", "docs", "tests"], no-default-feature = true }

@@ -4319,18 +4319,23 @@ packages:
 - conda: .
   name: scikit-learn
   version: 1.8.0.dev0
-  build: pyh4616a5c_0
-  subdir: noarch
+  build: hbf21a9e_0
+  subdir: osx-arm64
   depends:
-  - joblib >=1.2.0,<2
+  - python
   - numpy >=1.19.5,<3
-  - python
-  - python
+  - numpy >=1.23,<3
   - scipy >=1.6.0,<2
+  - joblib >=1.2.0,<2
   - threadpoolctl >=3.1.0,<4
+  - llvm-openmp >=20.1.8
+  - llvm-openmp >=20.1.8
+  - python_abi 3.13.* *_cp313
+  license: BSD-3-Clause
   input:
-    hash: cf1d576ccc3820c59967aec88e70c9a4a43a15872405d7977cea1cc2b935e0dc
-    globs: []
+    hash: 084393c9ba0627005d1f2adc2c56fc3801bc986109705b15c4f05f16b4c1bfd1
+    globs:
+    - pyproject.toml
 - conda: https://prefix.dev/conda-forge/osx-arm64/scipy-1.16.1-py313h74efe86_0.conda
   sha256: c39467e39d444517edcf5ffd117f1984dc69523da8f519f6c6cbf6c38653a033
   md5: 21ee392d9c8f7329fac0c43fb85c74bf
