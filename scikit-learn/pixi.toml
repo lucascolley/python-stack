@@ -13,7 +13,7 @@ version = "1.8.0.dev0"
 
 [package.build]
 source.path = "scikit-learn"
-config.compilers = ["c"]
+config.compilers = ["c", "cxx"]
 
 [package.build.backend]
 name = "pixi-build-python"
@@ -24,16 +24,10 @@ channels = [
 ]
 
 [package.build-dependencies]
+compilers = "*"
 llvm-openmp = "*"
-python = "*"
-ninja = "*"
-meson-python = ">=0.16"
-cython = ">=3.0.10"
-numpy = "*"
-scipy = "*"
 
 [package.host-dependencies]
-llvm-openmp = "*"
 uv = "*"
 python = "*"
 meson-python = "*"

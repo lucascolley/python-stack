@@ -4330,10 +4330,11 @@ packages:
   - threadpoolctl >=3.1.0,<4
   - llvm-openmp >=20.1.8
   - llvm-openmp >=20.1.8
+  - libcxx >=19
   - python_abi 3.13.* *_cp313
   license: BSD-3-Clause
   input:
-    hash: 084393c9ba0627005d1f2adc2c56fc3801bc986109705b15c4f05f16b4c1bfd1
+    hash: 09dff6b3b2dac23bf6d8476e691fdeb5d36f98d684e6155ffacea9f59e98a948
     globs:
     - pyproject.toml
 - conda: https://prefix.dev/conda-forge/osx-arm64/scipy-1.16.1-py313h74efe86_0.conda
