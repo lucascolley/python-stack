@@ -1,0 +1,52 @@
+[workspace]
+name = "imbalanced-learn"
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["osx-arm64"]
+preview = ["pixi-build"]
+
+[package]
+name = { workspace = true }
+authors = ["imbalanced-learn developers"]
+description = "Toolbox for imbalanced dataset in machine learning"
+version = "0.14.0.dev0"
+
+[package.build.backend]
+name = "pixi-build-python"
+version = "*"
+
+[package.build.config]
+noarch = true
+
+[package.build.source]
+path = "imbalanced-learn"
+
+[package.build-dependencies]
+python = "*"
+
+[package.host-dependencies]
+uv = "*"
+python = "*"
+setuptools = "*"
+
+[package.run-dependencies]
+python = "*"
+numpy = ">=1.25.2,<3"
+scipy = ">=1.11.4,<2"
+joblib = ">=1.2.0,<2"
+threadpoolctl = ">=3.1.0,<4"
+scikit-learn = { path = "../scikit-learn" }
+
+[feature.source.dependencies]
+python = "*"
+ninja = "*"
+scikit-learn = { path = "../scikit-learn" }
+imbalanced-learn = { path = "." }
+
+[feature.dev.dependencies]
+ipykernel = "*"
+ipython = "*"
+jupyterlab = "*"
+towncrier = "*"
+
+[environments]
+dev = { features = ["source", "dev"], no-default-feature = true }
