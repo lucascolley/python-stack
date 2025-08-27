@@ -47,8 +47,6 @@ threadpoolctl = ">=3.1.0,<4"
 
 
 [feature.source.dependencies]
-python = "*"
-ninja = "*"
 scikit-learn = { path = "." }
 
 [feature.dev.dependencies]
@@ -110,3 +108,4 @@ tests = { cmd = "spin test", cwd = "scikit-learn" }
 
 [environments]
 dev = { features = ["source", "dev", "lint", "docs", "tests"], no-default-feature = true }
+source = { features = ["source"], no-default-feature = true }
