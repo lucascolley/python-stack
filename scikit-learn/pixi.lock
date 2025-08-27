@@ -293,7 +293,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/rfc3986-validator-0.1.1-pyh9f0ad1d_0.tar.bz2
       - conda: https://prefix.dev/conda-forge/noarch/rfc3987-syntax-1.1.0-pyhe01879c_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/roman-numerals-py-3.1.0-pyhd8ed1ab_0.conda
-      - conda: https://prefix.dev/conda-forge/osx-arm64/rpds-py-0.27.0-py313h80e0809_0.conda
+      - conda: https://prefix.dev/conda-forge/osx-arm64/rpds-py-0.27.1-py313h80e0809_0.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/ruamel.yaml-0.18.15-py313hcdf3177_0.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/ruamel.yaml.clib-0.2.8-py313h63a2874_1.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/scikit-image-0.25.2-py313h668b085_1.conda
@@ -4234,22 +4234,21 @@ packages:
   - pkg:pypi/roman-numerals-py?source=hash-mapping
   size: 13348
   timestamp: 1740240332327
-- conda: https://prefix.dev/conda-forge/osx-arm64/rpds-py-0.27.0-py313h80e0809_0.conda
-  sha256: d05d4eb509beb6a8061793a5710f4f9dffad98284bb0ace9a3f21b63102c78a6
-  md5: d7b4225434fffea78af14273a12dbcee
+- conda: https://prefix.dev/conda-forge/osx-arm64/rpds-py-0.27.1-py313h80e0809_0.conda
+  sha256: a4bd0f620cdab3760b7f8a39248ce974187c160f8cd54860f2d8674d75e7d711
+  md5: 853010644628104ea462f6458a7e0a44
   depends:
   - python
-  - python 3.13.* *_cp313
   - __osx >=11.0
+  - python 3.13.* *_cp313
   - python_abi 3.13.* *_cp313
   constrains:
   - __osx >=11.0
   license: MIT
-  license_family: MIT
   purls:
-  - pkg:pypi/rpds-py?source=compressed-mapping
-  size: 356744
-  timestamp: 1754570030468
+  - pkg:pypi/rpds-py?source=hash-mapping
+  size: 354660
+  timestamp: 1756315398955
 - conda: https://prefix.dev/conda-forge/osx-arm64/ruamel.yaml-0.18.15-py313hcdf3177_0.conda
   sha256: 56dc2e7ffbc4e156c2d7ff4f46a8ba689e3ff5271d28ed6ad6f60f26e03c0d90
   md5: 2b9161f4fc49d026c12fa14247e74fa6
@@ -4330,11 +4329,11 @@ packages:
   - threadpoolctl >=3.1.0,<4
   - llvm-openmp >=20.1.8
   - llvm-openmp >=20.1.8
-  - libcxx >=19
+  - libcxx >=20
   - python_abi 3.13.* *_cp313
   license: BSD-3-Clause
   input:
-    hash: 09dff6b3b2dac23bf6d8476e691fdeb5d36f98d684e6155ffacea9f59e98a948
+    hash: 2103674c950d5ccb019b3f3d39e45cc61bf8d7d3b1553799b48ac1a7246be8f9
     globs:
     - pyproject.toml
 - conda: https://prefix.dev/conda-forge/osx-arm64/scipy-1.16.1-py313h74efe86_0.conda
