@@ -1,11 +1,12 @@
 [workspace]
-authors = ["Guillaume Lemaitre <guillaume@probabl.ai>"]
-channels = ["conda-forge"]
 name = "python-stack"
+channels = ["https://prefix.dev/conda-forge"]
 platforms = ["osx-arm64"]
-version = "0.1.0"
-
-[tasks]
+preview = ["pixi-build"]
 
 [dependencies]
-python = ">=3.13.5,<3.14"
+python = "*"
+numpy = "*"
+scipy = "*"
+ipython = "*"
+scikit-learn = { path = "scikit-learn" }
