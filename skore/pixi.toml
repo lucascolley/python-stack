@@ -18,7 +18,7 @@ version = "*"
 noarch = true
 
 [package.build.source]
-path = "skore/skore"
+path = "../skore-src/skore"
 
 [package.build-dependencies]
 python = "*"
