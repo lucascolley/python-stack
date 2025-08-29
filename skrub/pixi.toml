@@ -1,0 +1,104 @@
+[workspace]
+name = "skrub"
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["osx-arm64"]
+preview = ["pixi-build"]
+
+[package]
+name = { workspace = true }
+authors = ["skrub developers"]
+description = "Machine learning with dataframes"
+version = "0.7.0.dev0"
+
+[package.build.backend]
+channels = [
+  "https://prefix.dev/pixi-build-backends",
+  "https://prefix.dev/conda-forge",
+]
+name = "pixi-build-python"
+version = "*"
+
+[package.build.config]
+noarch = true
+
+[package.build.source]
+path = "skrub"
+
+[package.build-dependencies]
+python = "*"
+
+[package.host-dependencies]
+uv = "*"
+python = "*"
+setuptools = "*"
+
+[package.run-dependencies]
+python = "*"
+numpy = ">=1.25.2,<3"
+scipy = ">=1.11.4,<2"
+joblib = ">=1.2.0,<2"
+threadpoolctl = ">=3.1.0,<4"
+pandas = ">=1.5.3"
+jinja2 = ">=3.1.2"
+matplotlib = ">=3.4.3"
+requests = ">=2.25.0"
+pydot = "*"
+scikit-learn = { path = "../scikit-learn" }
+
+[feature.source.dependencies]
+ninja = "*"
+scikit-learn = { path = "../scikit-learn" }
+skrub = { path = "." }
+
+[feature.dev.dependencies]
+ipykernel = "*"
+ipython = "*"
+jupyterlab = "*"
+twine = "*"
+
+[feature.dev.activation]
+scripts = ["activate_dot.sh"]  # required by `pydot`
+
+[feature.docs.dependencies]
+jupyterlite-sphinx = "*"
+jupyterlite-pyodide-kernel = "*"
+matplotlib = "*"
+numpydoc = "*"
+pydata-sphinx-theme = "*"
+plotly = "*"
+seaborn = "*"
+sphinx = "*"
+sphinx-copybutton = "*"
+sphinx-gallery = "*"
+sphinxext-opengraph = "*"
+sphinx-autosummary-accessors = ">=2025.3.1,<2026"
+statsmodels = "*"
+
+[feature.optional.dependencies]
+pyarrow = "*"
+polars = "*"
+plotly = "*"
+
+[feature.transformers.dependencies]
+sentence-transformers = "*"
+
+[feature.tests.dependencies]
+numpydoc = "*"
+pytest = ">=7.2.2,<9"
+pytest-cov = ">=4.1.0,<6"
+pytest-xdist = ">=3.5.0,<4"
+
+[feature.docs.tasks]
+build-doc = { cmd = "make html", cwd = "skrub/doc" }
+build-doc-quick = { cmd = "make html-noplot", cwd = "skrub/doc" }
+clean-doc = { cmd = "rm -rf _build/ && rm -rf auto_examples/ && rm -rf reference/generated/", cwd = "skrub/doc" }
+
+[feature.lint.tasks]
+lint = { cmd = "pre-commit install && pre-commit run -v --all-files --show-diff-on-failure" }
+
+[feature.tests.tasks]
+tests = { cmd = "pytest -vsl --cov=skrub --cov-report=xml skrub", cwd = "skrub" }
+tests-user-guide = { cmd = "pytest doc/*.rst", cwd = "skrub" }
+
+[environments]
+dev = { features = ["source", "dev", "docs", "lint", "tests", "optional", "transformers"], no-default-feature = true }

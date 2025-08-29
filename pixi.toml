@@ -10,4 +10,5 @@ numpy = "*"
 scipy = "*"
 ipython = "*"
 scikit-learn = { path = "scikit-learn" }
-skore ={ path = "skore" }
+imbalanced-learn = { path = "imbalanced-learn" }
+skore = { path = "skore" }
