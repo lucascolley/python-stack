@@ -57,5 +57,39 @@ ipykernel = "*"
 ipython = "*"
 jupyterlab = "*"
 
+[feature.lint.dependencies]
+pre-commit = "*"
+
+[feature.tests.dependencies]
+pytest = "*"
+pytest-cov = "*"
+pytest-order = "*"
+pytest-randomly = "*"
+pytest-xdist = "*"
+xdoctest = "*"
+polars = "*"
+pyarrow = "*"
+
+[feature.tests.tasks]
+tests = { cmd = "pytest -vsl --cov=skore --cov-report=xml --cov-report=term-missing -n auto", cwd = "skore/skore/tests" }
+
+[feature.docs.dependencies]
+altair = "*"
+numpydoc = "*"
+plotly = "*"
+pydata-sphinx-theme = "*"
+python-kaleido = "*"
+sentence-transformers = "*"
+sphinx = "*"
+sphinx-design = "*"
+sphinx-gallery = "*"
+sphinx-copybutton = "*"
+sphinx-tabs = "*"
+sphinx-autosummary-accessors = "*"
+xgboost = "*"
+
+[feature.docs.tasks]
+docs = { cmd = "make html", cwd = "skore/sphinx" }
+
 [environments]
-dev = { features = ["source", "dev"], no-default-feature = true }
+dev = { features = ["source", "dev", "docs", "lint", "tests"], no-default-feature = true }
