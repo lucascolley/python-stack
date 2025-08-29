@@ -4,7 +4,6 @@ channels = ["https://prefix.dev/conda-forge"]
 platforms = ["osx-arm64"]
 preview = ["pixi-build"]
 
-
 [package]
 name = { workspace = true }
 authors = ["scikit-learn developers <scikit-learn@python.org>"]
@@ -109,4 +108,3 @@ tests = { cmd = "spin test", cwd = "scikit-learn" }
 
 [environments]
 dev = { features = ["source", "dev", "lint", "docs", "tests"], no-default-feature = true }
-source = { features = ["source"], no-default-feature = true }

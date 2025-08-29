@@ -10,3 +10,4 @@ numpy = "*"
 scipy = "*"
 ipython = "*"
 scikit-learn = { path = "scikit-learn" }
+skore ={ path = "skore" }
