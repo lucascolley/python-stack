@@ -17,12 +17,12 @@ source.path = "scikit-learn"
 compilers = ["c", "cxx"]
 
 [package.build.backend]
-name = "pixi-build-python"
-version = "*"
 channels = [
   "https://prefix.dev/pixi-build-backends",
   "https://prefix.dev/conda-forge",
 ]
+name = "pixi-build-python"
+version = "*"
 
 [package.build-dependencies]
 llvm-openmp = "*"

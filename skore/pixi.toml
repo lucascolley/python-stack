@@ -11,6 +11,10 @@ description = "Own your data science"
 version = "0.11.0.dev0"
 
 [package.build.backend]
+channels = [
+  "https://prefix.dev/pixi-build-backends",
+  "https://prefix.dev/conda-forge",
+]
 name = "pixi-build-python"
 version = "*"
 
@@ -18,7 +22,7 @@ version = "*"
 noarch = true
 
 [package.build.source]
-path = "../skore-src/skore"
+path = "skore/skore"
 
 [package.build-dependencies]
 python = "*"
@@ -40,10 +44,12 @@ plotly = "*"
 rich = "*"
 skrub = "*"
 seaborn = "*"
+skore-local-project = { path = "../skore-local-project" }
 scikit-learn = { path = "../scikit-learn" }
 
 [feature.source.dependencies]
 scikit-learn = { path = "../scikit-learn" }
+skore-local-project = { path = "../skore-local-project" }
 skore = { path = "." }
 
 [feature.dev.dependencies]
