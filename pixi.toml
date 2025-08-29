@@ -6,9 +6,15 @@ preview = ["pixi-build"]
 
 [dependencies]
 python = "*"
+ipykernel = "*"
+ipython = "*"
+jupyterlab = "*"
+ninja = "*"
 numpy = "*"
 scipy = "*"
-ipython = "*"
 scikit-learn = { path = "scikit-learn" }
 imbalanced-learn = { path = "imbalanced-learn" }
 skore = { path = "skore" }
+skrub = { path = "skrub" }
+
+[tasks]
