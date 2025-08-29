@@ -12,9 +12,20 @@ jupyterlab = "*"
 ninja = "*"
 numpy = "*"
 scipy = "*"
+
+[feature.source.dependencies]
 scikit-learn = { path = "scikit-learn" }
 imbalanced-learn = { path = "imbalanced-learn" }
 skore = { path = "skore" }
 skrub = { path = "skrub" }
 
 [tasks]
+clone-imbalanced-learn = { cmd = "git clone git@github.com:scikit-learn-contrib/imbalanced-learn.git imbalanced-learn/imbalanced-learn" }
+clone-scikit-learn = { cmd = "git clone git@github.com:scikit-learn/scikit-learn.git scikit-learn/scikit-learn" }
+clone-skore = { cmd = "git clone git@github.com:probabl-ai/skore.git skore/skore" }
+clone-skore-local-project = { cmd = "git clone git@github.com:probabl-ai/skore.git skore-local-project/skore-local-project" }
+clone-skrub = { cmd = "git clone git@github.com:skrub-data/skrub.git skrub/skrub" }
+clone-all = { depends-on = ["clone-imbalanced-learn", "clone-scikit-learn", "clone-skore", "clone-skore-local-project", "clone-skrub"] }
+
+[environments]
+source = { features = ["source"] }
