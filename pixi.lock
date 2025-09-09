@@ -1,5 +1,9 @@
 version: 6
 environments:
+  clone:
+    channels:
+    - url: https://prefix.dev/conda-forge/
+    packages: {}
   default:
     channels:
     - url: https://prefix.dev/conda-forge/
