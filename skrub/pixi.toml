@@ -93,8 +93,12 @@ build-doc = { cmd = "make html", cwd = "skrub/doc" }
 build-doc-quick = { cmd = "make html-noplot", cwd = "skrub/doc" }
 clean-doc = { cmd = "rm -rf _build/ && rm -rf auto_examples/ && rm -rf reference/generated/", cwd = "skrub/doc" }
 
-[feature.lint.tasks]
-lint = { cmd = "pre-commit install && pre-commit run -v --all-files --show-diff-on-failure" }
+[feature.lint.dependencies]
+pre-commit = "*"
+
+[feature.lint.tasks.lint]
+cmd = "pre-commit install && pre-commit run -v --all-files --show-diff-on-failure"
+cwd = "skrub"
 
 [feature.tests.tasks]
 tests = { cmd = "pytest -vsl --cov=skrub --cov-report=xml skrub", cwd = "skrub" }
