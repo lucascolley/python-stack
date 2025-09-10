@@ -47,7 +47,6 @@ skore-local-project = { path = "../skore-local-project" }
 scikit-learn = { path = "../scikit-learn" }
 skrub = { path = "../skrub" }
 
-
 [feature.source.dependencies]
 ninja = "*"
 scikit-learn = { path = "../scikit-learn" }
@@ -61,6 +60,10 @@ jupyterlab = "*"
 
 [feature.lint.dependencies]
 pre-commit = "*"
+
+[feature.lint.tasks.lint]
+cmd = "pre-commit install && pre-commit run -v --all-files --show-diff-on-failure"
+cwd = "skore/skore"
 
 [feature.tests.dependencies]
 pytest = "*"
