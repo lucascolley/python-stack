@@ -44,6 +44,7 @@ plotly = "*"
 rich = "*"
 seaborn = "*"
 skore-local-project = { path = "../skore-local-project" }
+skore-hub-project = { path = "../skore-hub-project" }
 scikit-learn = { path = "../scikit-learn" }
 skrub = { path = "../skrub" }
 
@@ -51,6 +52,7 @@ skrub = { path = "../skrub" }
 ninja = "*"
 scikit-learn = { path = "../scikit-learn" }
 skore-local-project = { path = "../skore-local-project" }
+skore-hub-project = { path = "../skore-hub-project" }
 skore = { path = "." }
 
 [feature.dev.dependencies]
