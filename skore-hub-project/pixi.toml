@@ -41,10 +41,11 @@ matplotlib = "*"
 pydantic = "*"
 rich = "*"
 scikit-learn = { path = "../scikit-learn" }
-skops = "*"
+skops = { path = "../skops" }
 
 [feature.source.dependencies]
 skore-hub-project = { path = "." }
+skops = { path = "../skops" }
 
 [feature.dev.dependencies]
 ipykernel = "*"

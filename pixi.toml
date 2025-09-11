@@ -20,16 +20,18 @@ skore = { path = "skore" }
 skore-local-project = { path = "skore-local-project" }
 skore-hub-project = { path = "skore-hub-project" }
 skrub = { path = "skrub" }
+skops = { path = "skops" }
 
 [feature.clone.tasks]
-clean-repo-dirs = "rm -rf imbalanced-learn/imbalanced-learn scikit-learn/scikit-learn skore/skore skore-local-project/skore-local-project skrub/skrub"
+clean-repo-dirs = "rm -rf imbalanced-learn/imbalanced-learn scikit-learn/scikit-learn skore/skore skore-local-project/skore-local-project skore-hub-project/skore-hub-project skrub/skrub skops/skops"
 clone-imbalanced-learn = "git clone git@github.com:scikit-learn-contrib/imbalanced-learn.git imbalanced-learn/imbalanced-learn"
 clone-scikit-learn = "git clone git@github.com:scikit-learn/scikit-learn.git scikit-learn/scikit-learn"
 clone-skore = "git clone git@github.com:probabl-ai/skore.git skore/skore"
 clone-skore-local-project = "git clone git@github.com:probabl-ai/skore.git skore-local-project/skore-local-project"
 clone-skore-hub-project = "git clone git@github.com:probabl-ai/skore.git skore-hub-project/skore-hub-project"
 clone-skrub = "git clone git@github.com:skrub-data/skrub.git skrub/skrub"
-clone-all = { depends-on = ["clean-repo-dirs", "clone-imbalanced-learn", "clone-scikit-learn", "clone-skore", "clone-skore-local-project", "clone-skrub"] }
+clone-skops = "git clone git@github.com:skops-dev/skops.git skops/skops"
+clone-all = { depends-on = ["clean-repo-dirs", "clone-imbalanced-learn", "clone-scikit-learn", "clone-skore", "clone-skore-local-project", "clone-skore-hub-project", "clone-skrub", "clone-skops"] }
 
 clean-lock-files = "rm -rf pixi.lock imbalanced-learn/pixi.lock scikit-learn/pixi.lock skore/pixi.lock skore-local-project/pixi.lock skrub/pixi.lock"
 update-imbalanced-learn = { cmd = "pixi update", cwd = "imbalanced-learn" }
@@ -38,7 +40,8 @@ update-skore = { cmd = "pixi update", cwd = "skore" }
 update-skore-local-project = { cmd = "pixi update", cwd = "skore-local-project" }
 update-skore-hub-project = { cmd = "pixi update", cwd = "skore-hub-project" }
 update-skrub = { cmd = "pixi update", cwd = "skrub" }
-update-all = { depends-on = ["update-imbalanced-learn", "update-scikit-learn", "update-skore", "update-skore-local-project", "update-skrub"] }
+update-skops = { cmd = "pixi update", cwd = "skops" }
+update-all = { depends-on = ["update-imbalanced-learn", "update-scikit-learn", "update-skore", "update-skore-local-project", "update-skore-hub-project", "update-skrub", "update-skops"] }
 
 [environments]
 source = { features = ["source"] }

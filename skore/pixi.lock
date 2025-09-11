@@ -325,7 +325,6 @@ environments:
       - conda: https://prefix.dev/conda-forge/noarch/setuptools-80.9.0-pyhff2d567_0.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/simplejson-3.20.1-py313hcdf3177_1.conda
       - conda: https://prefix.dev/conda-forge/noarch/six-1.17.0-pyhe01879c_1.conda
-      - conda: https://prefix.dev/conda-forge/noarch/skops-0.13.0-pyhd8ed1ab_0.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/sleef-3.9.0-hb028509_0.conda
       - conda: https://prefix.dev/conda-forge/osx-arm64/snappy-1.2.2-hd121638_0.conda
       - conda: https://prefix.dev/conda-forge/noarch/sniffio-1.3.1-pyhd8ed1ab_1.conda
@@ -386,6 +385,7 @@ environments:
       - conda: https://prefix.dev/conda-forge/osx-arm64/zstd-1.5.7-h6491c7d_2.conda
       - conda: .
       - conda: ../scikit-learn
+      - conda: ../skops
       - conda: ../skore-hub-project
       - conda: ../skore-local-project
       - conda: ../skrub
@@ -4329,20 +4329,28 @@ packages:
   license_family: MIT
   size: 18455
   timestamp: 1753199211006
-- conda: https://prefix.dev/conda-forge/noarch/skops-0.13.0-pyhd8ed1ab_0.conda
-  sha256: a4b0008176afe8aa1e3c8cef0bbb8ce1028b3833c1ec1fca842108c077e12cd3
-  md5: 3f1ee5538071da97f362a3321e53e6dc
+- conda: ../skops
+  name: skops
+  version: 0.14.0.dev0
+  build: pyh4616a5c_0
+  subdir: noarch
   depends:
-  - numpy >=1.25.0
-  - packaging >=17.0
-  - prettytable >=3.9
-  - python >=3.9
-  - scikit-learn >=1.2
-  - scipy >=1.10.0
-  license: MIT
-  license_family: MIT
-  size: 103008
-  timestamp: 1754500284698
+  - python
+  - python *
+  - numpy >=1.25.2,<3
+  - scipy >=1.11.4,<2
+  - joblib >=1.2.0,<2
+  - threadpoolctl >=3.1.0,<4
+  - scikit-learn
+  - prettytable >=3.9.0,<4
+  - packaging >17.0
+  input:
+    hash: 217fee8bd8f56003bea783ba6db3a27d7e40d7b458a682f5fa99c4db65462f78
+    globs:
+    - pyproject.toml
+  sources:
+    scikit-learn:
+      path: ../scikit-learn
 - conda: .
   name: skore
   version: 0.11.0.dev0
@@ -4394,12 +4402,14 @@ packages:
   - scikit-learn
   - skops
   input:
-    hash: f9b912bf9e0dfcbc220b564de59a79070c50bed1ac87dbac1f61ecaf109e0b38
+    hash: 2b6a42cd56759a52fa3cd8795288931d97d7424c60e23c6c4960c171c0a7c140
     globs:
     - pyproject.toml
   sources:
     scikit-learn:
       path: ../scikit-learn
+    skops:
+      path: ../skops
 - conda: ../skore-local-project
   name: skore-local-project
   version: 0.11.0.dev0
