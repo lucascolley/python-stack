@@ -52,6 +52,7 @@ scikit-learn = { path = "." }
 ipykernel = "*"
 ipython = "*"
 jupyterlab = "*"
+jupyter-book = "*"
 spin = "*"
 towncrier = "*"
 array-api-compat = "*"

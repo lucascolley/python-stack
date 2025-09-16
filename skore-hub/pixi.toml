@@ -1,0 +1,10 @@
+[workspace]
+authors = ["Guillaume Lemaitre <guillaume@probabl.ai>"]
+channels = ["conda-forge"]
+name = "skore-hub"
+platforms = ["osx-arm64"]
+version = "0.1.0"
+
+[tasks]
+
+[dependencies]
