@@ -1,0 +1,58 @@
+[workspace]
+name = "cloudpickle"
+channels = ["https://prefix.dev/conda-forge"]
+platforms = ["osx-arm64"]
+preview = ["pixi-build"]
+
+[package]
+name = { workspace = true }
+authors = ["cloudpickle developers"]
+description = "Cloudpickle is a library for serializing Python objects to a string and sending them to a remote machine."
+version = "0.1.0.dev0"
+
+[package.build.backend]
+channels = [
+    "https://prefix.dev/pixi-build-backends",
+    "https://prefix.dev/conda-forge",
+]
+name = "pixi-build-python"
+version = "*"
+
+[package.build.config]
+noarch = true
+
+[package.build.source]
+path = "cloudpickle"
+
+[package.build-dependencies]
+python = "*"
+
+[package.host-dependencies]
+python = "*"
+flit = "*"
+
+[package.run-dependencies]
+python = "*"
+
+[feature.source.dependencies]
+cloudpickle = { path = "."}
+
+[feature.dev.dependencies]
+ipykernel = "*"
+ipython = "*"
+jupyterlab = "*"
+
+[feature.tests.dependencies]
+pre-commit = "*"
+pytest = "*"
+pytest-cov = "*"
+psutil = "*"
+tornado = "*"
+numpy = "*"
+codecov = "*"
+coverage = "*"
+
+[tasks]
+
+[environments]
+dev = { features = ["source", "dev", "tests"], no-default-feature = true }
