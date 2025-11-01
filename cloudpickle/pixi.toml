@@ -52,7 +52,11 @@ numpy = "*"
 codecov = "*"
 coverage = "*"
 
+[feature.py313.dependencies]
+python = "3.13.*"
+
 [tasks]
 
 [environments]
+py313 = { features = ["source", "dev", "tests", "py313"], no-default-feature = true }
 dev = { features = ["source", "dev", "tests"], no-default-feature = true }
