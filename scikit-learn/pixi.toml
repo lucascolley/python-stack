@@ -18,7 +18,6 @@ compilers = ["c", "cxx"]
 
 [package.build.backend]
 channels = [
-  "https://prefix.dev/pixi-build-backends",
   "https://prefix.dev/conda-forge",
 ]
 name = "pixi-build-python"
