@@ -60,7 +60,7 @@ ipython = "*"
 jupyterlab = "*"
 
 [feature.lint.dependencies]
-pre-commit = "*"
+pre-commit = "==4.3.0"
 
 [feature.lint.tasks.lint]
 cmd = "pre-commit install && pre-commit run -v --all-files --show-diff-on-failure"
