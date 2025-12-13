@@ -24,15 +24,15 @@ noarch = true
 path = "skrub"
 
 [package.build-dependencies]
-python = "*"
+python = "~=3.13.0"
 
 [package.host-dependencies]
 uv = "*"
-python = "*"
+python = "~=3.13.0"
 setuptools = "*"
 
 [package.run-dependencies]
-python = "*"
+python = "~=3.13.0"
 numpy = ">=1.25.2,<3"
 scipy = ">=1.11.4,<2"
 joblib = ">=1.2.0,<2"
@@ -79,6 +79,7 @@ polars = "*"
 plotly = "*"
 
 [feature.transformers.dependencies]
+pytorch = ">=2.4.1,<3"
 sentence-transformers = "*"
 
 [feature.tests.dependencies]

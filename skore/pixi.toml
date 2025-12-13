@@ -24,15 +24,15 @@ noarch = true
 path = "skore/skore"
 
 [package.build-dependencies]
-python = "*"
+python = "~=3.13.0"
 
 [package.host-dependencies]
 uv = "*"
-python = "*"
+python = "~=3.13.0"
 hatchling = "*"
 
 [package.run-dependencies]
-python = "*"
+python = "~=3.13.0"
 anywidget = "*"
 ipywidgets = "*"
 joblib = "*"
